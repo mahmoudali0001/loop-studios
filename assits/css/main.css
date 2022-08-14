@@ -1,0 +1,390 @@
+:root {
+  --main-color: hsl(217, 28%, 15%);
+  --offwhite-color: #dfdfdf;
+  --second-color: hsl(218deg 28% 13%);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Start Scroll Bar Styling */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  width: 15px;
+}
+
+/* End Scroll Bar Styling */
+
+/* Start Body Styling */
+
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* End Body Styling */
+
+/* start container */
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* End container */
+
+/* Start Header */
+
+.header {
+  height: 100vh;
+  position: relative;
+  margin: 0;
+  color: white;
+}
+
+.header .l-bg {
+  height: 100%;
+  max-width: 100%;
+}
+
+.header .s-bg {
+  display: none;
+  width: 100%;
+  height: 100vh;
+}
+
+.header .l-bg,
+.header .s-bg {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Start Nav Bar */
+
+.header .nav-bar {
+  display: flex;
+  padding-top: 50px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-bar .logo {
+  z-index: 4;
+}
+
+.close-btn {
+  position: absolute;
+  top: 50px;
+  right: 25px;
+  z-index: 4;
+  display: none;
+}
+
+.close-btn.show {
+  display: inline-block;
+}
+
+.header .nav-bar .links {
+  display: flex;
+  justify-content: space-between;
+  gap: 35px;
+  position: relative;
+  transition: 0.5s linear;
+}
+
+.header .nav-bar .links li {
+  list-style: none;
+}
+
+.header .nav-bar .links li a {
+  text-decoration: none;
+  color: white;
+}
+
+.header .container h1 {
+  width: 650px;
+  font-size: 70px;
+  font-weight: 300;
+  line-height: 1.1;
+  padding: 30px 25px;
+  margin-top: 100px;
+  border: 1px solid white;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.icon span:nth-child(2).show-span {
+  width: 100%;
+}
+
+.icon {
+  width: 30px;
+  display: none;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  z-index: 2;
+}
+
+.icon span {
+  background-color: white;
+  margin-bottom: 5px;
+  height: 2px;
+}
+
+.icon span:last-child {
+  margin-bottom: 0;
+}
+
+.icon span:first-child {
+  width: 100%;
+}
+
+.icon span:nth-child(2) {
+  width: 50%;
+  transition: 0.3s cubic-bezier(0, 0, 0, 0.97);
+}
+
+.icon span:last-child {
+  width: 100%;
+}
+
+.header .nav-bar .links.show {
+  transform: translate(0, 0);
+}
+/* End Nav Bar */
+
+/* End Header */
+
+/* Start About Us  */
+
+.about-us {
+  padding-top: 200px;
+  padding-bottom: 200px;
+}
+
+.about-us .about-us-content {
+  display: flex;
+  align-items: flex-end;
+}
+
+.about-us .about-us-content .interactive-content {
+  background-color: white;
+  padding: 40px 70px;
+  height: 50%;
+  font-family: "Alata", sans-serif;
+  margin-left: -150px;
+}
+
+.about-us .about-us-content .interactive-content h1 {
+  font-size: 35px;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.about-us .about-us-content .interactive-content p {
+  line-height: 1.5;
+}
+
+.s-interactive-img {
+  display: none;
+}
+
+.about-us-img {
+  margin-left: 250px;
+}
+/* End About Us */
+
+/* Start Our Creations */
+
+.our-creations {
+  padding-bottom: 100px;
+  font-family: "Alata", sans-serif;
+  position: relative;
+}
+
+.our-creations .our-creations-content div:first-child {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.btn-see-all {
+  text-decoration: none;
+  color: black;
+  padding: 8px 20px;
+  font-size: 13px;
+  letter-spacing: 3px;
+  border: 1px solid black;
+  transition: 0.2s linear;
+  text-align: center;
+}
+
+.btn-see-all:hover {
+  background-color: black;
+  color: white;
+}
+
+.our-creations .our-creations-content div:first-child div {
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 30px;
+  letter-spacing: 2px;
+}
+
+.our-creations .our-creations-content div:nth-child(2) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+.our-creations .our-creations-content div:nth-child(2) .s-img {
+  display: none;
+  width: 100%;
+}
+
+.item {
+  position: relative;
+  padding: 0;
+}
+
+.item::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.26);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.3s linear;
+  z-index: 1;
+}
+
+.item span {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Josefin Sans", sans-serif;
+  width: 150px;
+  font-size: 35px;
+  z-index: 2;
+}
+
+.item:hover::before {
+  background: rgba(238, 238, 238, 0.445);
+}
+
+.item:hover.item span {
+  color: black;
+}
+
+/* End Our Creations */
+
+/* Start Footer */
+
+footer {
+  background-color: black;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.footer-content div,
+.footer-content ul,
+.footer-content span {
+  width: 50%;
+}
+
+.footer-content .links {
+  display: flex;
+  gap: 15px;
+  position: relative;
+  padding: 0;
+}
+
+.footer-content .links li {
+  list-style: none;
+}
+
+.footer-content .links li a {
+  text-decoration: none;
+  color: white;
+  position: relative;
+}
+
+.footer-content span .footer-content .links li a::before {
+  content: "";
+  position: absolute;
+  background-color: white;
+  width: 25px;
+  height: 2px;
+  bottom: -15px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  display: none;
+  transition: 0.3s linear;
+}
+
+.footer-content .links li a:hover::before {
+  display: inline-block;
+}
+
+.footer-content .links li a:hover {
+  color: rgb(129, 129, 129);
+}
+
+.footer-content .social-links {
+  text-align: end;
+}
+
+.footer-content .social-links a {
+  padding-bottom: 5px;
+  transition: 0.2s linear;
+}
+
+.footer-content .social-links a:not(:last-child) {
+  margin-right: 15px;
+}
+
+.footer-content .social-links a:hover {
+  border-bottom: 2px solid white;
+}
+
+.footer-content span {
+  color: white;
+  text-align: end;
+  color: #888;
+}
+
+/* End Footer */
